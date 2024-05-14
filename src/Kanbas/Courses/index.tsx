@@ -5,7 +5,8 @@ import Home from "./Home";
 import Assignments from "./Assignments";
 import AssignmentEditor from "./Assignments/Editor";
 export default function Courses() {
-    return (<div id="wd-courses">
+    return (
+    <div id="wd-courses">
     <h2>Course 1234</h2>
     <hr />
     <table>

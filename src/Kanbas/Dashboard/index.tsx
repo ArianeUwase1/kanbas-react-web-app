@@ -7,7 +7,7 @@ export default function Dashboard() {
       <h2 id="wd-dashboard-published">Published Courses (7)</h2> <hr />
       <div id="wd-dashboard-courses">
         <div className="wd-dashboard-course">
-          <img src="/public/images/logo512.png" width={200} alt=" React Js"  />
+          <img src="/images/logo192.png" width={200} alt=" React Js"  />
           <div>
             <a className="wd-dashboard-course-link" href="#/Kanbas/Courses/1234/Home">
               CS 1234 React JS
@@ -19,7 +19,7 @@ export default function Dashboard() {
           </div>
         </div>
         <div className="wd-dashboard-course">
-          <img src="/public/images/NLP.png" width={200} alt=" NLP" />
+          <img src="/images/NLP.png" width={200} alt=" NLP" />
           <div>
             <a className="wd-dashboard-course-link" href="#/Kanbas/Courses/6120/Home">
               CS 6120 Natural Language Processing
@@ -31,7 +31,7 @@ export default function Dashboard() {
           </div>
         </div>
         <div className="wd-dashboard-course">
-          <img src="/public/images/7100.png" width={200} alt=" Time Series"  />
+          <img src="/images/7100.png" width={200} alt=" Time Series"  />
           <div>
             <a className="wd-dashboard-course-link" href="#/Kanbas/Courses/7100/Home">
               CIVE 7100 Time Series
@@ -43,7 +43,7 @@ export default function Dashboard() {
           </div>
         </div>
         <div className="wd-dashboard-course">
-          <img src="/public/images/5140.jpeg" width={200} alt="Econometrics" />
+          <img src="/images/5140.jpeg" width={200} alt="Econometrics" />
           <div>
             <a className="wd-dashboard-course-link" href="#/Kanbas/Courses/5140/Home">
               ECON 5140 Applied Econometrics
@@ -55,7 +55,7 @@ export default function Dashboard() {
           </div>
         </div>
         <div className="wd-dashboard-course">
-          <img src="/public/images/5262.jpeg" width={200} alt=" Big Data" />
+          <img src="/images/5262.jpeg" width={200} alt=" Big Data" />
           <div>
             <a className="wd-dashboard-course-link" href="#/Kanbas/Courses/5262/Home">
               PPUA 5262 Big Data for Cities
@@ -67,7 +67,7 @@ export default function Dashboard() {
           </div>
         </div>
         <div className="wd-dashboard-course">
-          <img src="/public/images/7990.png" width={200} alt="Thesis"  />
+          <img src="/images/7990.png" width={200} alt="Thesis"  />
           <div>
             <a className="wd-dashboard-course-link" href="#/Kanbas/Courses/7990/Home">
               DS 7990 Thesis
@@ -79,7 +79,7 @@ export default function Dashboard() {
           </div>
         </div>
         <div className="wd-dashboard-course">
-          <img src="/public/images/7305.jpeg" width={200} alt="Statistical Physics" />
+          <img src="/images/7305.jpeg" width={200} alt="Statistical Physics" />
           <div>
             <a className="wd-dashboard-course-link" href="#/Kanbas/Courses/7305/Home">
               PHYS 7305 Statistical Physics
