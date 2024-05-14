@@ -101,6 +101,11 @@ export default function AssignmentEditor() {
           </tr>
         </tbody>
       </table>
+      {/* Cancel and Save buttons */}
+      <div>
+        <button onClick={() => console.log("Cancelled")}>Cancel</button>
+        <button onClick={() => console.log("Saved")}>Save</button>
+      </div>
     </div>
   );
 }
