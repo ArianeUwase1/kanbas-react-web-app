@@ -19,7 +19,7 @@ export default function Dashboard() {
           </div>
         </div>
         <div className="wd-dashboard-course">
-          <img src="/images/nlp.jpg" width={200} />
+          <img src="/images/NLP.jpg" width={200} />
           <div>
             <a className="wd-dashboard-course-link" href="#/Kanbas/Courses/6120/Home">
               CS 6120 Natural Language Processing
@@ -31,7 +31,7 @@ export default function Dashboard() {
           </div>
         </div>
         <div className="wd-dashboard-course">
-          <img src="/images/time_series.jpg" width={200} />
+          <img src="/images/7100.jpg" width={200} />
           <div>
             <a className="wd-dashboard-course-link" href="#/Kanbas/Courses/7100/Home">
               CIVE 7100 Time Series
@@ -43,7 +43,7 @@ export default function Dashboard() {
           </div>
         </div>
         <div className="wd-dashboard-course">
-          <img src="/images/econometrics.jpg" width={200} />
+          <img src="/images/5140.jpg" width={200} />
           <div>
             <a className="wd-dashboard-course-link" href="#/Kanbas/Courses/5140/Home">
               ECON 5140 Applied Econometrics
@@ -55,7 +55,7 @@ export default function Dashboard() {
           </div>
         </div>
         <div className="wd-dashboard-course">
-          <img src="/images/big_data.jpg" width={200} />
+          <img src="/images/5262.jpg" width={200} />
           <div>
             <a className="wd-dashboard-course-link" href="#/Kanbas/Courses/5262/Home">
               PPUA 5262 Big Data for Cities
@@ -67,7 +67,7 @@ export default function Dashboard() {
           </div>
         </div>
         <div className="wd-dashboard-course">
-          <img src="/images/thesis.jpg" width={200} />
+          <img src="/images/7990.jpg" width={200} />
           <div>
             <a className="wd-dashboard-course-link" href="#/Kanbas/Courses/7990/Home">
               DS 7990 Thesis
@@ -79,7 +79,7 @@ export default function Dashboard() {
           </div>
         </div>
         <div className="wd-dashboard-course">
-          <img src="/images/statistical_physics.jpg" width={200} />
+          <img src="/images/7305.jpg" width={200} />
           <div>
             <a className="wd-dashboard-course-link" href="#/Kanbas/Courses/7305/Home">
               PHYS 7305 Statistical Physics
