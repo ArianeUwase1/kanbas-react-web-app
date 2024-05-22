@@ -3,7 +3,7 @@ import { FaFileImport, FaFileExport, FaFilter, FaCog } from 'react-icons/fa';
 
 export default function Grades() {
   return (
-    <div className="container">
+    <div id="wd-grades" className="p-3">
       <div className="row">
         <div className="col">
           <h2>Grades</h2>
