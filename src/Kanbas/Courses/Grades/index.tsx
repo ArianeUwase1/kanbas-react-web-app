@@ -9,26 +9,22 @@ export default function Grades() {
           <h2>Grades</h2>
         </div>
         <div className="col text-end">
+          <button className="btn btn-primary"><FaFileImport className="me-1" />Import</button>
           <button className="btn btn-primary me-2"><FaFileExport className="me-1" />Export</button>
           <button className="btn btn-primary me-2"><FaCog /></button>
         </div>
       </div>
       <div className="row mb-3">
-        <div className="col">
-          <div className="input-group">
-            <select className="form-select">
-              <option>Search Students</option>
-            </select>
-            <select className="form-select ms-2">
-              <option>Search Assignments</option>
-            </select>
-            <button className="btn btn-primary ms-2"><FaFilter /></button>
-          </div>
+        <div className="col-md-6">
+          <label htmlFor="searchStudents" className="form-label">Search Students</label>
+          <input type="text" id="searchStudents" className="form-control mb-2" placeholder="Search Students" />
         </div>
-      </div>
-      <div className="row mb-3">
-        <div className="col">
-          <button className="btn btn-primary"><FaFileImport className="me-1" />Import</button>
+        <div className="col-md-6">
+          <label htmlFor="searchAssignments" className="form-label">Search Assignments</label>
+          <div className="input-group mb-2">
+            <input type="text" id="searchAssignments" className="form-control" placeholder="Search Assignments" />
+            <button className="btn btn-primary"><FaFilter /></button>
+          </div>
         </div>
       </div>
       <div className="row">
