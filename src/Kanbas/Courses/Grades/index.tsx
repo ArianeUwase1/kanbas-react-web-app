@@ -3,7 +3,7 @@ import { FaFileImport, FaFileExport, FaFilter, FaCog } from 'react-icons/fa';
 
 export default function Grades() {
   return (
-    <div className="container mt-3">
+    <div className="container">
       <div className="row">
         <div className="col">
           <h2>Grades</h2>
@@ -52,7 +52,6 @@ export default function Grades() {
                   <td>95</td>
                   <td>88</td>
                 </tr>
-                {/* Add more rows as needed */}
               </tbody>
             </table>
           </div>

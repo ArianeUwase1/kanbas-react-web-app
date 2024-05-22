@@ -28,17 +28,17 @@ export default function KanbasNavigation() {
       <a id="wd-calendar-link" href="#/Kanbas/Calendar"
         className="list-group-item text-white
                    bg-black text-center border-0">
-        <LiaBookSolid className="fs-1 text-danger" /><br />
+        <IoCalendarOutline className="fs-1 text-danger" /><br />
         Calendar </a>
       <a id="wd-inbox-link" href="#/Kanbas/Inbox"
         className="list-group-item text-white
                    bg-black text-center border-0">
-        <LiaBookSolid className="fs-1 text-danger" /><br />
+        <FaInbox className="fs-1 text-danger" /><br />
         inbox </a>
       <a id="wd-Labs-link" href="#/Kanbas/Labs"
         className="list-group-item text-white
                    bg-black text-center border-0">
-        <LiaBookSolid className="fs-1 text-danger" /><br />
+        <LiaCogSolid className="fs-1 text-danger" /><br />
         Labs </a>
     </div>
 );}
