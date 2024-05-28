@@ -1,7 +1,17 @@
 import React from 'react';
-import { FaFileImport, FaFileExport, FaFilter, FaCog } from 'react-icons/fa';
+import { useParams } from 'react-router-dom';
+import { enrollments, users, assignments, grades } from '../../Database';
+import { FaFileImport,FaFileExport,FaCog } from 'react-icons/fa';
+
 
 export default function Grades() {
+  const { cid } = useParams();
+
+  // Filter students enrolled in the current course
+  const courseStudents = enrollments
+    .filter((enrollment) => enrollment.course === cid)
+    .map((enrollment) => users.find((user) => user.id === enrollment.user));
+
   return (
     <div id="wd-grades" className="p-3">
       <div className="row">
@@ -15,46 +25,32 @@ export default function Grades() {
         </div>
       </div>
       <div className="row mb-3">
-        <div className="col-md-6">
-          <label htmlFor="searchStudents" className="form-label">Search Students</label>
-          <input type="text" id="searchStudents" className="form-control mb-2" placeholder="Search Students" />
-        </div>
-        <div className="col-md-6">
-          <label htmlFor="searchAssignments" className="form-label">Search Assignments</label>
-          <div className="input-group mb-2">
-            <input type="text" id="searchAssignments" className="form-control" placeholder="Search Assignments" />
-            <button className="btn btn-primary"><FaFilter /></button>
-          </div>
-        </div>
       </div>
-      <div className="row">
-        <div className="col">
-          <div className="table-responsive">
-            <table className="table table-striped">
-              <thead>
-                <tr>
-                  <th>Student Name</th>
-                  <th>A1 SETUP<small> (out of 100)</small></th>
-                  <th>A2 HTML<small> (out of 100)</small></th>
-                  <th>A3 CSS<small> (out of 100)</small></th>
-                  <th>A3BOOTSTRAP<small> (out of 100)</small></th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><input type="text" className="form-control" defaultValue="John Doe" /></td>
-                  <td><input type="text" className="form-control" defaultValue="90" /></td>
-                  <td>85</td>
-                  <td>95</td>
-                  <td>88</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
+      <div className="table-responsive">
+        <table className="table table-striped">
+          <thead>
+            <tr>
+              <th>Student Name</th>
+              {assignments
+                .filter((assignment) => assignment.course === cid) // Filter assignments by course ID
+                .map((assignment) => (
+                  <th key={assignment._id}>{assignment.title}<small> (out of 100)</small></th>
+                ))}
+            </tr>
+          </thead>
+          <tbody>
+            {courseStudents.map((student: any) => (
+              <tr key={student.id}>
+                <td>{student.firstName} {student.lastName}</td>
+                {assignments.map((assignment: any) => {
+                  const grade = grades.find((grade: any) => grade.student === student.id && grade.assignment === assignment._id);
+                  return <td key={`${student.id}-${assignment._id}`}>{grade ? grade.grade : 'N/A'}</td>;
+                })}
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
     </div>
   );
-};
-
-
+}

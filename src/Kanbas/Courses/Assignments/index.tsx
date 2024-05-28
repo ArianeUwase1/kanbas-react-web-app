@@ -1,7 +1,18 @@
 import React from 'react';
-import { FaPlus, FaSearch } from 'react-icons/fa';
-  
+import { useParams } from 'react-router';
+import { Link } from 'react-router-dom';
+import { FaSearch,FaPlus } from 'react-icons/fa';
+import { assignments } from '../../Database';
+import { courses } from '../../Database';
+import { BsGripVertical } from 'react-icons/bs';
+import { MdAssignment } from "react-icons/md";
+import { IoMdArrowDropdown } from "react-icons/io";
+
 export default function Assignments() {
+  const { cid } = useParams();
+  const assignmentsData= assignments.filter((assignment) => assignment.course === cid);
+  const courseName = courses.find(course => course._id === cid)?.name;
+  const currentCourse = courses.find((course) => course._id === cid);
   return (
     <div id="wd-assignments" className="p-3">
       <div className="d-flex justify-content-between align-items-center mb-3">
@@ -12,8 +23,8 @@ export default function Assignments() {
           <input
             id="wd-search-assignment"
             className="form-control"
-            placeholder="Search "
-            aria-label="Search "
+            placeholder="Search"
+            aria-label="Search"
             aria-describedby="search-icon"
           />
         </div>
@@ -26,32 +37,34 @@ export default function Assignments() {
           </button>
         </div>
       </div>
-      <h3 id="wd-assignments-title" className="d-flex justify-content-between align-items-center mb-3">
-        ASSIGNMENTS 40% of Total
-        <button className="btn btn-primary btn-sm">
-          <FaPlus />
-        </button>
-      </h3>
+      <div className="d-flex justify-content-between align-items-center mb-3">
+        <div className="d-flex align-items-center">
+          <BsGripVertical className="me-2 fs-4" />
+          <IoMdArrowDropdown />
+          <h3 id="wd-assignments-title" className="mb-0">ASSIGNMENTS</h3>
+        </div>
+        <div className="d-flex align-items-center">
+          <span className="me-3">40% of Total</span>
+          <button className="btn btn-primary btn-sm">
+            <FaPlus />
+          </button>
+        </div>
+      </div>
       <ul id="wd-assignment-list" className="list-unstyled">
-        <li className="wd-assignment-list-item border-start border-3 border-success ps-3 mb-2">
-          <a className="wd-assignment-link d-block fw-bold text-decoration-none" href="#/Kanbas/Courses/1234/Assignments/123">
-            A1 - ENV + HTML
-          </a>
-          <small className="text-muted">Due: June 03 at 11:59pm | Points: 100</small>
-        </li>
-        <li className="wd-assignment-list-item border-start border-3 border-success ps-3 mb-2">
-          <a className="wd-assignment-link d-block fw-bold text-decoration-none" href="#/Kanbas/Courses/1234/Assignments/124">
-            A2 - CSS + BOOTSTRAP
-          </a>
-          <small className="text-muted">Due: June 10 at 11:59pm | Points: 100</small>
-        </li>
-        <li className="wd-assignment-list-item border-start border-3 border-success ps-3 mb-2">
-          <a className="wd-assignment-link d-block fw-bold text-decoration-none" href="#/Kanbas/Courses/1234/Assignments/125">
-            A3 - JAVASCRIPT + REACT
-          </a>
-          <small className="text-muted">Due: June 17 at 11:59pm | Points: 100</small>
-        </li>
-      </ul>
+      {assignmentsData.map((assignment) => (
+          <li key={assignment._id} className="wd-assignment-list-item border-start border-3 border-success ps-3 mb-2">
+            <a
+              href={`#/Kanbas/Courses/${cid}/Assignments/${assignment._id}`}
+              className="wd-assignment-link d-block fw-bold text-decoration-none">
+              <BsGripVertical className="me-2 fs-4" />
+              <MdAssignment className="me-2 fs-4" />
+
+              {assignment.title}
+            </a>
+            <small className="text-muted ms-5">Due: {assignment.due} | Available: {assignment.available} | Points: {assignment.points}</small>
+          </li>
+        ))}
+          </ul>
     </div>
   );}
 

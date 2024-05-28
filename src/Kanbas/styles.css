@@ -6,6 +6,8 @@ body * {  font-family: Arial, Helvetica, sans-serif;  }
     --bs-btn-border-color: #c7cdd1;
     --bs-btn-hover-color: #fff;
 }
+
+
 .bg-secondary {
     background-color: #c7cdd1 !important;
 }
