@@ -43,11 +43,24 @@ import { useLocation } from "react-router";
           Kanbas
         </a>
       </li>
+
       <li className="nav-item">
-        <a id="wd-k" href="https://github.com/ArianeUwase1/kanbas-react-web-app.git" className="nav-link">
+        <a id="wd-g1" href="https://github.com/ArianeUwase1/kanbas-react-web-app.git" className="nav-link">
           My GitHub
         </a>
       </li>
+      <li className="nav-item">
+        <a id="wd-g2" href="https://github.com/ArianeUwase1/kanbas-node-server-app.git" className="nav-link">
+          My GitHub- Node
+        </a>
+      </li>
+      <li className="nav-item">
+        <a id="wd-r" href="https://kanbas-node-server-app-1-0819.onrender.com" className="nav-link">
+          Render
+        </a>
+      </li>
+
+
     </ul>
   );
 }
