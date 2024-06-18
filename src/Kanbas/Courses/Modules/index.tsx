@@ -14,6 +14,7 @@ export default function Modules() {
   const { modules } = useSelector((state: any) => state.modulesReducer);
   const [moduleName, setModuleName] = useState("");
   const dispatch = useDispatch();
+
   const fetchModules = async () => {
     const modules = await client.findModulesForCourse(cid as string);
     dispatch(setModules(modules));
@@ -30,7 +31,7 @@ export default function Modules() {
     const status = await client.updateModule(module);
     dispatch(updateModule(module));
   };
-
+ 
   useEffect(() => {
     fetchModules();
   }, []);
@@ -55,9 +56,8 @@ export default function Modules() {
           .map((module: any) => (
           <li className="wd-module list-group-item p-0 mb-5 fs-5 border-gray">
             <div className="wd-title p-3 ps-2 bg-secondary">
-              {!module.editing ?(
-                module.name
-              ):(
+            {!module.editing && module.name}
+                  {module.editing && (
                 <input className="form-control w-50 d-inline-block"
                       onChange={(e) => saveModule({ ...module, name: e.target.value }) }
                       onKeyDown={(e) => {
@@ -80,7 +80,8 @@ export default function Modules() {
                 {module.lessons.map((lesson: any) => (
                   <li className="wd-lesson list-group-item p-3 ps-1">
                     <BsGripVertical className="me-2 fs-3" />
-                    {lesson.name}
+                    <span className="wd-title">{lesson.name}</span>
+                    <LessonControlButtons />
                   </li>
                 ))}
               </ul>

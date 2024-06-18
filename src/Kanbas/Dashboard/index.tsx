@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 export default function Dashboard(
-  { courses, course, setCourse, addNewCourse, deleteCourse, updateCourse }: {
+  { courses=[] , course={} , setCourse, addNewCourse, deleteCourse, updateCourse }: {
     courses: any[]; course: any; setCourse: (course: any) => void;
     addNewCourse: () => void; deleteCourse: (courseId: string) => void;
     updateCourse: () => void; 
@@ -15,7 +15,8 @@ export default function Dashboard(
         <button className="btn btn-primary float-end"
                 id="wd-add-new-course-click"
                 onClick={addNewCourse} > 
-          Add 
+          {" "}
+          Add{" "}
         </button>
         <button className="btn btn-warning float-end me-2"
                 onClick={updateCourse} id="wd-update-course-click">
@@ -73,29 +74,3 @@ export default function Dashboard(
     </div>
   );
 }
-
-/* const [courses, setCourses] = useState(db.courses);
-  const [course, setCourse] = useState<any>({
-    _id: "0", name: "New Course", number: "New Number",
-    startDate: "2023-09-10", endDate: "2023-12-15",
-    image: "/images/reactjs.jpg", description: "New Description"
-  });
-  const updateCourse = () => {
-    setCourses(
-      courses.map((c) => {
-        if (c._id === course._id) {
-          return course;
-        } else {
-          return c;
-        }
-      })
-    );
-  };
-  const addNewCourse = () => {
-    const newCourse = { ...course,
-                        _id: new Date().getTime().toString() };
-    setCourses([...courses, { ...course, ...newCourse }]);
-  };
-  const deleteCourse = (courseId: string) => {
-    setCourses(courses.filter((course) => course._id !== courseId));
-  };*/
